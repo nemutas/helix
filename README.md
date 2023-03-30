@@ -1,11 +1,7 @@
 # About
 
-This repository is [Three.js](https://threejs.org/) template with [Astro](https://astro.build/).
+Infinitely scrollable spiral images.
 
 https://nemutas.github.io/helix/
 
-# Using
-
-- VSCode
-- [WebGL GLSL Editor](https://marketplace.visualstudio.com/items?itemName=raczzalan.webgl-glsl-editor) (v1.3.0 -> If the extension is set to glsl, errors originating from threejs built-in variables will not occur.)
-- [Prettier Plugin for Astro](https://github.com/withastro/prettier-plugin-astro)
+<img src='https://user-images.githubusercontent.com/46724121/228718922-5d9908fe-c8ae-445c-832c-b00d86a81252.png' width='800' />
