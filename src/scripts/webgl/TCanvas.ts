@@ -72,6 +72,7 @@ export class TCanvas {
       vertexShader,
       fragmentShader,
       side: THREE.DoubleSide,
+      // transparent: true,
       // wireframe: true,
     })
     const offset = ((geometry.parameters.height + spiralGap) * ~~(amount / 10)) / 2
@@ -158,9 +159,10 @@ export class TCanvas {
     this.cards.position.y = THREE.MathUtils.lerp(this.cards.position.y, this.cards.userData.target.position.y, 0.07)
     this.cards.rotation.y = THREE.MathUtils.lerp(this.cards.rotation.y, this.cards.userData.target.rotation.y, 0.07)
 
-    const speed = this.cards.userData.target.rotation.y - this.cards.rotation.y
+    const targetSpeed = this.cards.userData.target.rotation.y - this.cards.rotation.y
     this.cards.children.forEach((card) => {
-      ;(card as CardMesh).material.uniforms.uSpeed.value = speed
+      const uniforms = (card as CardMesh).material.uniforms
+      uniforms.uSpeed.value = THREE.MathUtils.lerp(uniforms.uSpeed.value, targetSpeed, 0.1)
     })
 
     gl.render()
